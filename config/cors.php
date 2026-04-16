@@ -1,5 +1,10 @@
 <?php
 
+$frontendOrigins = array_values(array_filter(array_map('trim', explode(',', env(
+    'FRONTEND_URLS',
+    env('FRONTEND_URL', 'https://frontend-fvcq.vercel.app,http://localhost:3000,http://127.0.0.1:3000,http://localhost:3001,http://127.0.0.1:3001')
+)))));
+
 return [
 
     /*
@@ -19,7 +24,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:3001'), 'http://127.0.0.1:3001', 'http://localhost:3001'],
+    'allowed_origins' => $frontendOrigins,
 
     'allowed_origins_patterns' => [],
 
