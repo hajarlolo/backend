@@ -1,0 +1,6 @@
+# Required packages for CV parsing
+composer require smalot/pdfparser
+composer require phpoffice/phpword
+
+# For Guzzle HTTP client (should already be installed)
+composer require guzzlehttp/guzzle
